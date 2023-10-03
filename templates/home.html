@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+        background-image: url('static/back.png');
+        background-size: cover;
+        font-family: sans-serif;
+        background-attachment: fixed;
+        margin-top: 40px;
+        height: 100vh;
+        padding: 0;
+        margin: 0;
+    }
+
+
+    .loader {
+        display: none;
+        top: 50%;
+        left: 50%;
+        position: absolute;
+        transform: translate(-50%, -50%);
+    }
+
+    .loading {
+        border: 5px solid #ccc;
+        width: 90px;
+        height: 90px;
+        border-radius: 50%;
+        border-top-color: #61f3c5;
+        border-left-color: #61f3c5;
+        animation: spin 1s infinite ease-in;
+    }
+
+    @keyframes spin {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+</style>
+
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+    <title>Reviews Sentiments...</title>
+</head>
+
+<script type="text/javascript">
+    function spinner() {
+        document.getElementsByClassName("loader")[0].style.display = "block";
+    }
+</script>
+
+
+<body>
+    <div>
+        <h1 style="text-align: center;padding-top: 15px;padding-bottom: 15px;color:whitesmoke;font-size:44px;">Youtube
+            Video Comments Sentiment Analyzer</h1>
+    </div>
+
+    <div>
+        <form action="results">
+            <div class="form-group">
+                <h2 style="text-align: center;padding-top: 77px;padding-bottom: 15px;color:bisque;font-size: 45px;">
+                    Enter the Youtube Video URL...
+                </h2>
+                <div style="margin: 0 auto;width: 60%;">
+
+                    <input type="url" class="form-control" name='url' id="url" style='border-radius:1.25rem;margin-top: 10px;
+                        margin-bottom: 30px;height: 70px;' placeholder='Please enter a valid url'>
+
+                    <div style="text-align: center" ;>
+                        <button style="width: 280px;font-size: 25px;height: 62px;border-radius: 2.25rem;" type="submit"
+                            class="btn btn-primary" onclick="spinner()">Analyze Comments</button>
+                        <div class="loader">
+                            <div class="loading"></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </form>
+
+    </div>
+
+    <footer class='text-light bg-dark position-absolute fixed-bottom '>
+        <p class='text-center py-1 my-0'>
+            Made with ❤ by Abhishek Sharma
+        </p>
+    </footer>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
